@@ -1,5 +1,6 @@
-from src.ollama_agent import OllamaAgent
 import qi
+
+from src.ollama_agent import OllamaAgent
 
 if __name__ == "__main__":
     app = qi.Application(["--qi-url=192.168.10.40"])
@@ -7,5 +8,8 @@ if __name__ == "__main__":
 
     session = app.session
     ollama_agent = OllamaAgent(session)
+    
+    session.registerService("OllamaAgent", ollama_agent)
+    print("Service ready")
 
-    ollama_agent.generate_answer("Pourquoi Prégaldiny est-il chauve")
+    app.run()

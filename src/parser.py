@@ -11,9 +11,11 @@ class ResponseParser:
 
     def _should_ignore_chunk(self, chunk_content : str) -> bool:
         if "<think>" in chunk_content:
+            self.in_think_section = True
             return True
         if "</think>" in chunk_content:
-            return False
+            self.in_think_section = False
+            return True
         return self.in_think_section
 
     def _extract_sentences(self) -> Generator[str, None, None]:
