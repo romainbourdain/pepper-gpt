@@ -30,6 +30,7 @@ class OllamaAgent:
                 self.conversation_history.append(
                     {"role": "assistant", "content": sentence}
                 )
+                print(sentence)
                 yield sentence
         except Exception as e:
             print(f"❌ Erreur lors de la communication avec Ollama : {e}")

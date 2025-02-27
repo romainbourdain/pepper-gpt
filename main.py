@@ -2,11 +2,15 @@ from src.audio_transcriber import AudioTranscriber
 from src.ollama_agent import OllamaAgent
 from src.pepper_interface import PepperInterface
 
+from dotenv import load_dotenv
+
 remote_audio_path = "/home/nao/recorded_audio.wav"
 local_audio_path = "./audio/recorded_audio.wav"
 
 
 def main() -> None:
+    load_dotenv()
+
     pepper_interface = PepperInterface()
     audio_transcriber = AudioTranscriber()
     ollama_agent = OllamaAgent()
