@@ -175,3 +175,5 @@ cython_debug/
 
 # mypy cache
 .mypy_cache/
+
+audio/

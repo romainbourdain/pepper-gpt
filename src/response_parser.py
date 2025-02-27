@@ -1,6 +1,7 @@
 import re
 from typing import Generator, Iterable
 
+
 class ResponseParser:
     buffer: str
     in_think_section: bool
